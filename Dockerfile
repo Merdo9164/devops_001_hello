@@ -1,9 +1,9 @@
 #uygulamanın çalışması için JRE lazım
-FROM ubuntu:latest
-LABEL authors="erdogan"
+#FROM ubuntu:latest
+FROM eclipse-temurin:21-jre-alpine
 
 #projenin jar dosyası burada
-ARG JAR_FILE=target/devops_001_hello-1.0.0.jar
+ARG JAR_FILE=target/*.jar
 
 #projenin jar halini docker icine kopyala
 COPY ${JAR_FILE} my_app.jar
@@ -13,4 +13,4 @@ EXPOSE 8080
 
 
 #uygulamayı java komutla çalıştır
-ENTRYPOINT ["top", "-b","java","-jar","/my_app.jar"]
+ENTRYPOINT ["java","-jar","/my_app.jar"]
