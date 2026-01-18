@@ -150,6 +150,11 @@ docker build     --build-arg   JAR_FILE=build/libs/devops_002_hello-1.0.2.jar   
 docker build     --build-arg   JAR_FILE=build/libs/devops_002_hello-1.0.3.jar       --tag  merdo9164/devops_002_hello:v003     .
 ```
 
+#### Eğer en son version her ne ise onun için mutlaka latest sürümü de çıkartılmalı.
+```
+docker build     --build-arg   JAR_FILE=build/libs/devops_002_hello-1.0.2.jar       --tag  merdo9164/devops_002_hello:latest     .
+```
+
 ---
 
 ### ============= Docker Hub'a image göndermek =============
@@ -164,6 +169,10 @@ docker push merdo9164/devops_002_hello:v002
 
 ```
 docker push merdo9164/devops_002_hello:v003
+```
+
+```
+docker push merdo9164/devops_002_hello:latest
 ```
 
 ---
